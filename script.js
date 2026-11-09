@@ -1,22 +1,50 @@
-const portfolioState={theme:localStorage.getItem('portfolio-theme')||'dark',words:['Java Backend Developer','Python Developer','API Builder','Software Developer']};
-const root=document.documentElement;
-const themeSwitch=document.getElementById('themeSwitch');
-const typingTarget=document.getElementById('typingTarget');
-const githubProjects=document.getElementById('githubProjects');
-root.dataset.theme=portfolioState.theme;
+const d=document,r=d.documentElement,t=d.getElementById("themeSwitch"),g=d.getElementById("githubProjects"),u="devmatheus32";
 
-function renderThemeIcon(){themeSwitch.innerHTML=`<i data-lucide="${portfolioState.theme==='dark'?'sun':'moon'}"></i>`;lucide.createIcons()}
-function switchTheme(){portfolioState.theme=portfolioState.theme==='dark'?'light':'dark';root.dataset.theme=portfolioState.theme;localStorage.setItem('portfolio-theme',portfolioState.theme);renderThemeIcon()}
+let theme=localStorage.getItem("portfolio-theme")||"dark";
 
-themeSwitch.addEventListener('click',switchTheme);
-renderThemeIcon();
+function setTheme(){
+r.dataset.theme=theme;
+t.textContent=theme==="dark"?"☀":"☾"
+}
 
-let wordIndex=0;let letterIndex=0;let deleting=false;
-function runTyping(){const currentWord=portfolioState.words[wordIndex];typingTarget.textContent=currentWord.slice(0,letterIndex);if(!deleting&&letterIndex<currentWord.length){letterIndex++;setTimeout(runTyping,65);return}if(!deleting){deleting=true;setTimeout(runTyping,1400);return}if(letterIndex>0){letterIndex--;setTimeout(runTyping,32);return}deleting=false;wordIndex=(wordIndex+1)%portfolioState.words.length;setTimeout(runTyping,250)}
-setTimeout(runTyping,500);
+t.onclick=()=>{
+theme=theme==="dark"?"light":"dark";
+localStorage.setItem("portfolio-theme",theme);
+setTheme()
+};
 
-async function loadGithubData(){try{const profileResponse=await fetch('https://api.github.com/users/devmatheus32');if(!profileResponse.ok)throw new Error('profile');const profile=await profileResponse.json();document.getElementById('repoCount').textContent=profile.public_repos;document.getElementById('followerCount').textContent=profile.followers;const repositoriesResponse=await fetch('https://api.github.com/users/devmatheus32/repos?sort=updated&per_page=8');if(!repositoriesResponse.ok)throw new Error('repos');const repositories=await repositoriesResponse.json();const visibleRepositories=repositories.filter(repository=>repository.name!=='mazinn444'&&repository.name!=='devmatheus32.github.io'&&repository.name!=='MoonGUI').slice(0,4);let stars=0;repositories.forEach(repository=>stars+=repository.stargazers_count||0);document.getElementById('starCount').textContent=stars;githubProjects.innerHTML=visibleRepositories.map(repository=>`<a class="github-mini" href="${repository.html_url}" target="_blank" rel="noreferrer"><h4>${repository.name}</h4><p>${repository.description||'Projeto sem descrição.'}</p><div class="github-mini-meta"><span>${repository.language||'Código'}</span><span>★ ${repository.stargazers_count}</span><span>⑂ ${repository.forks_count}</span></div></a>`).join('');const commitCount=await countRecentCommits();document.getElementById('commitCount').textContent=commitCount}catch(error){document.getElementById('repoCount').textContent='--';document.getElementById('followerCount').textContent='--';document.getElementById('starCount').textContent='--'}}
-async function countRecentCommits(){const response=await fetch('https://api.github.com/search/commits?q=author:devmatheus32');if(!response.ok)return '--';const data=await response.json();return data.total_count>999?`${Math.floor(data.total_count/1000)}k+`:data.total_count}
+setTheme();
 
-lucide.createIcons();
-loadGithubData();
+async function github(){
+try{
+const[p,repos]=await Promise.all([
+fetch(`https://api.github.com/users/${u}`).then(r=>r.ok?r.json():Promise.reject()),
+fetch(`https://api.github.com/users/${u}/repos?sort=updated&per_page=8`).then(r=>r.ok?r.json():Promise.reject())
+]);
+
+d.getElementById("repoCount").textContent=p.public_repos;
+d.getElementById("followerCount").textContent=p.followers;
+d.getElementById("starCount").textContent=repos.reduce((n,r)=>n+r.stargazers_count,0);
+
+const visible=repos
+.filter(r=>!["mazinn444","devmatheus32.github.io","MoonGUI"].includes(r.name))
+.slice(0,4);
+
+g.innerHTML=visible.map(r=>`
+<a class="github-mini" href="${r.html_url}" target="_blank" rel="noreferrer">
+<h4>${r.name}</h4>
+<p>${r.description||"Projeto sem descrição."}</p>
+<div class="github-mini-meta">
+<span>${r.language||"Código"}</span>
+<span>★ ${r.stargazers_count}</span>
+<span>⑂ ${r.forks_count}</span>
+</div>
+</a>`).join("")
+}catch{
+d.getElementById("repoCount").textContent=
+d.getElementById("followerCount").textContent=
+d.getElementById("starCount").textContent="--"
+}
+}
+
+"requestIdleCallback"in window?requestIdleCallback(github):setTimeout(github,500);
