@@ -1,23 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="description" content="Portfólio de Matheus Nascimento, desenvolvedor Backend."><meta name="theme-color" content="#f78166"><title>Matheus Nascimento | Backend Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"><script src="https://unpkg.com/lucide@latest"></script><link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Portfólio de Matheus Nascimento, desenvolvedor Backend.">
+<meta name="theme-color" content="#0d0d0d">
+<title>Matheus Nascimento | Backend Developer</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
-<div class="noise"></div><div class="github-grid"></div>
-<header class="topbar"><a class="brand" href="#inicio"><span class="brand-mark"><i data-lucide="terminal"></i></span><span>mazinn444</span></a><nav class="menu"><a href="#sobre">Sobre</a><a href="#stack">Stack</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a></nav><button class="theme-switch" id="themeSwitch" type="button" aria-label="Mudar tema"><i data-lucide="sun"></i></button></header>
+<header>
+<a class="brand" href="#inicio">Matheus Nascimento</a>
+<nav>
+<a href="#sobre">Sobre</a>
+<a href="#stack">Stack</a>
+<a href="#projetos">Projetos</a>
+<a href="#contato">Contato</a>
+</nav>
+<button id="themeSwitch" aria-label="Alterar tema">☀</button>
+</header>
+
 <main>
-<section class="hero section-shell" id="inicio"><div class="hero-copy"><div class="eyebrow"><span class="status-dot"></span> backend developer · 2023 →</div><div class="hero-profile"><div class="profile-photo"><span>MN</span><i data-lucide="camera"></i></div><div><small>Matheus</small><strong>Nascimento</strong></div></div><div class="hero-role"><span>~/backend</span><strong id="typingTarget"></strong><b>_</b></div><p class="hero-text">Transformo ideias em software. Crio APIs, aplicações desktop e aplicações web com foco em código limpo, desempenho, estabilidade e manutenção.</p><div class="hero-actions"><a class="button button-primary" href="#projetos"><i data-lucide="code-2"></i> Ver projetos</a><a class="button button-ghost" href="https://github.com/devmatheus32" target="_blank" rel="noreferrer"><i data-lucide="github"></i> GitHub</a></div><div class="hero-meta"><span><i data-lucide="calendar-days"></i> Programando desde 2023</span><span><i data-lucide="braces"></i> Java é minha linguagem favorita</span></div></div><div class="terminal-card"><div class="terminal-head"><span></span><span></span><span></span><label>matheus@dev: ~</label></div><div class="terminal-body"><div><span class="terminal-prompt">$</span> whoami</div><p>Matheus Nascimento</p><div><span class="terminal-prompt">$</span> cat focus.txt</div><p>backend · APIs · automation · AI</p><div><span class="terminal-prompt">$</span> stack --main</div><p><span class="orange">Java</span> · <span class="blue">Python</span> · <span class="purple">TypeScript</span></p><div><span class="terminal-prompt">$</span> status</div><p class="terminal-status"><span class="status-dot"></span> building something useful</p></div></div></section>
-<section class="section-shell content-section" id="sobre"><div class="section-heading"><span>01</span><h2>Sobre mim</h2></div><div class="about-layout"><div class="about-text"><p>Opa, eai! Sou o <strong>Matheus Nascimento</strong>, <strong>desenvolvedor backend</strong> desde <strong>2023</strong>. Gosto de transformar ideias em software, criando APIs, aplicações desktop e aplicações web.</p><p>Meu foco é desenvolver, corrigir e planejar sistemas de forma rápida, estável e escalável, sempre buscando escrever código limpo e de fácil manutenção. Minha linguagem favorita é o <strong>Java</strong>.</p><p>Com meus projetos, fui evoluindo em lógica de programação, análise e entendimento de problemas, arquitetura, desenvolvimento de APIs, automações, IA e integração com bancos de dados.</p></div><div class="about-facts"><div class="fact"><i data-lucide="server"></i><strong>Backend</strong><small>APIs e sistemas</small></div><div class="fact"><i data-lucide="zap"></i><strong>Performance</strong><small>otimização e arquitetura</small></div><div class="fact"><i data-lucide="bot"></i><strong>Automação & IA</strong><small>soluções inteligentes</small></div></div></div></section>
-<section class="section-shell content-section" id="stack"><div class="section-heading"><span>02</span><h2>Stack</h2></div><div class="stack-intro-wide"><p>Tecnologias que já fazem parte dos meus estudos e projetos. Cada item aparece com seu ícone para deixar a stack mais fácil de visualizar.</p></div><div class="technology-groups">
-<div class="technology-group"><div class="technology-title"><i data-lucide="code-2"></i><span>Linguagens</span></div><div class="skill-cloud"><span class="skill featured"><i class="devicon-java-plain colored"></i>Java</span><span class="skill featured"><i class="devicon-python-plain colored"></i>Python</span><span class="skill"><i class="devicon-javascript-plain colored"></i>JavaScript</span><span class="skill"><i class="devicon-typescript-plain colored"></i>TypeScript</span><span class="skill"><i class="devicon-kotlin-plain colored"></i>Kotlin</span><span class="skill"><i class="devicon-csharp-plain colored"></i>C#</span><span class="skill"><i class="devicon-lua-plain colored"></i>Lua</span></div></div>
-<div class="technology-group"><div class="technology-title"><i data-lucide="layers-3"></i><span>Frameworks e Banco de Dados</span></div><div class="skill-cloud"><span class="skill featured"><i class="devicon-spring-original colored"></i>Spring Boot</span><span class="skill"><i class="devicon-flask-original colored"></i>Flask</span><span class="skill featured"><i class="devicon-fastapi-plain colored"></i>FastAPI</span><span class="skill"><i class="devicon-nodejs-plain colored"></i>Node.js</span><span class="skill"><i class="devicon-java-plain colored"></i>JavaFX</span><span class="skill"><i class="devicon-java-plain colored"></i>FXGL</span><span class="skill"><i class="devicon-java-plain colored"></i>libGDX</span><span class="skill"><i class="devicon-react-original colored"></i>React</span><span class="skill"><i class="devicon-nextjs-plain"></i>Next.js</span><span class="skill"><i class="devicon-electron-original"></i>Electron</span><span class="skill featured"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span><span class="skill featured"><i class="devicon-mysql-plain colored"></i>MySQL</span><span class="skill"><i class="devicon-sqlite-plain colored"></i>SQLite</span></div></div>
-<div class="technology-group"><div class="technology-title"><i data-lucide="wrench"></i><span>Ferramentas</span></div><div class="skill-cloud"><span class="skill"><i class="devicon-docker-plain colored"></i>Docker</span><span class="skill"><i class="devicon-git-plain colored"></i>Git</span><span class="skill"><i class="devicon-github-original"></i>GitHub</span><span class="skill"><i class="devicon-linux-plain"></i>Linux</span><span class="skill"><i class="devicon-windows11-original colored"></i>Windows</span><span class="skill"><i class="devicon-maven-plain colored"></i>Maven</span><span class="skill"><i class="devicon-gradle-plain colored"></i>Gradle</span><span class="skill"><i class="devicon-postman-plain colored"></i>Postman</span><span class="skill"><i class="devicon-vscode-plain colored"></i>VS Code</span><span class="skill"><i class="devicon-intellij-plain colored"></i>IntelliJ IDEA</span></div></div>
-<div class="technology-group special-group"><div class="technology-title"><i data-lucide="sparkles"></i><span>APIs, Automações e IA</span></div><div class="special-grid"><div><i data-lucide="plug-zap"></i><strong>APIs</strong><p>Criação e integração de APIs REST, serviços web e comunicação entre sistemas.</p></div><div><i data-lucide="workflow"></i><strong>Automações</strong><p>Scripts e aplicações para automatizar tarefas, fluxos e processos repetitivos.</p></div><div><i data-lucide="brain-circuit"></i><strong>IA</strong><p>Integração de inteligência artificial em aplicações e experimentos com modelos.</p></div></div></div>
-</div></section>
-<section class="section-shell content-section" id="projetos"><div class="section-heading"><span>03</span><h2>Repositórios em destaque</h2><a href="https://github.com/devmatheus32?tab=repositories" target="_blank" rel="noreferrer">ver todos <i data-lucide="arrow-up-right"></i></a></div><div class="project-note"><i data-lucide="quote"></i><p>Por enquanto eu tenho um único projeto grande. Prefiro ter menos de 3 projetos bons do que ter mais de 3 ruins!</p></div><div class="project-feature"><div class="project-index">01</div><div class="project-main"><div class="project-top"><span class="project-type">JAVA / LUA</span><a href="https://github.com/devmatheus32/MoonGUI" target="_blank" rel="noreferrer"><i data-lucide="external-link"></i></a></div><h3>MoonGUI</h3><p>Framework Java que atua como um "compilador" para Lua, permitindo suporte ao desenvolvimento de UI de forma simples. O projeto ainda está em desenvolvimento e pode conter bugs.</p><div class="project-tags"><span>Java</span><span>Lua</span><span>JavaFX</span><span>Framework</span><span>UI</span></div><a class="project-link" href="https://github.com/devmatheus32/MoonGUI" target="_blank" rel="noreferrer">Explorar projeto <i data-lucide="arrow-right"></i></a></div><div class="project-side-code"><span>MoonGUI</span><span class="code-muted">↳ Java</span><span class="code-muted">↳ Lua</span><span class="code-orange">↳ UI</span><span class="code-muted">↳ JVM</span></div></div><div class="github-projects" id="githubProjects"></div></section>
-<section class="section-shell content-section stats-section"><div class="github-stat-card"><i data-lucide="git-commit-horizontal"></i><strong id="commitCount">--</strong><span>commits públicos</span></div><div class="github-stat-card"><i data-lucide="folder-git-2"></i><strong id="repoCount">--</strong><span>repositórios</span></div><div class="github-stat-card"><i data-lucide="star"></i><strong id="starCount">--</strong><span>estrelas</span></div><div class="github-stat-card"><i data-lucide="users"></i><strong id="followerCount">--</strong><span>seguidores</span></div></section>
-<section class="section-shell contact-section" id="contato"><div class="contact-terminal"><span class="contact-label">~/contact</span><h2>Me chame se quiser<br><em>criar um projeto junto!</em></h2><p>Se você tem um projeto, uma ideia ou quer trocar uma ideia sobre tecnologia, pode me chamar.</p><div class="contact-actions"><a class="button button-primary" href="https://github.com/devmatheus32" target="_blank" rel="noreferrer"><i data-lucide="github"></i> GitHub</a><a class="button button-ghost" href="mailto:matheus2019souz@gmail.com"><i data-lucide="mail"></i> E-mail</a></div></div></section>
-</main><footer class="footer section-shell"><span>© 2026 Matheus Nascimento</span><span>HTML · CSS · JavaScript</span><a href="#inicio">voltar ao topo <i data-lucide="arrow-up"></i></a></footer><script src="script.js"></script>
-</body></html>
+<section class="hero" id="inicio">
+<div>
+<p class="label">BACKEND DEVELOPER</p>
+<h1>Matheus<br><span>Nascimento.</span></h1>
+<p class="hero-text">Desenvolvo APIs, aplicações e sistemas com foco em desempenho, estabilidade e código fácil de manter.</p>
+<div class="actions">
+<a class="primary" href="#projetos">Ver projetos</a>
+<a href="https://github.com/devmatheus32" target="_blank" rel="noreferrer">GitHub ↗</a>
+</div>
+</div>
+
+<div class="hero-info">
+<div><span>FOCO</span><strong>Backend</strong></div>
+<div><span>PRINCIPAL</span><strong>Java</strong></div>
+<div><span>DESDE</span><strong>2023</strong></div>
+</div>
+</section>
+
+<section id="sobre">
+<div class="heading"><span>01</span><h2>Sobre mim</h2></div>
+<div class="about">
+<h3>Software simples.<br>Bem feito.</h3>
+<div>
+<p>Sou <strong>Matheus Nascimento</strong>, desenvolvedor backend desde 2023. Gosto de transformar ideias em software, criando APIs, aplicações desktop e aplicações web.</p>
+<p>Meu foco é desenvolver e planejar sistemas rápidos, estáveis e fáceis de manter. Minha linguagem favorita é <strong>Java</strong>.</p>
+<p>Com meus projetos, venho evoluindo em arquitetura, APIs, automações, bancos de dados e resolução de problemas.</p>
+</div>
+</div>
+</section>
+
+<section id="stack">
+<div class="heading"><span>02</span><h2>Stack</h2></div>
+
+<div class="stack-group">
+<h3>Linguagens</h3>
+<div class="skills">
+<span>Java</span>
+<span>Python</span>
+<span>JavaScript</span>
+<span>TypeScript</span>
+<span>C#</span>
+<span>Lua</span>
+</div>
+</div>
+
+<div class="stack-group">
+<h3>Backend & Banco de dados</h3>
+<div class="skills">
+<span>Spring Boot</span>
+<span>Flask</span>
+<span>FastAPI</span>
+<span>Node.js</span>
+<span>JavaFX</span>
+<span>FXGL</span>
+<span>Electron</span>
+<span>PostgreSQL</span>
+<span>MySQL</span>
+<span>SQLite</span>
+</div>
+</div>
+
+<div class="stack-group">
+<h3>Ferramentas</h3>
+<div class="skills">
+<span>Docker</span>
+<span>Git</span>
+<span>GitHub</span>
+<span>Linux</span>
+<span>Windows</span>
+<span>Maven</span>
+<span>Gradle</span>
+<span>Postman</span>
+<span>VS Code</span>
+<span>IntelliJ IDEA</span>
+</div>
+</div>
+</section>
+
+<section id="projetos">
+<div class="heading">
+<span>03</span>
+<h2>Projetos</h2>
+<a href="https://github.com/devmatheus32?tab=repositories" target="_blank" rel="noreferrer">Todos ↗</a>
+</div>
+
+<article class="featured-project">
+<div class="project-number">01</div>
+<div>
+<p class="label">JAVA / LUA</p>
+<h3>MoonGUI</h3>
+<p>Framework Java para criação de interfaces através de Lua. O projeto busca simplificar a construção de UIs utilizando a JVM.</p>
+<div class="tags">
+<span>Java</span>
+<span>Lua</span>
+<span>JavaFX</span>
+<span>Framework</span>
+</div>
+<a href="https://github.com/devmatheus32/MoonGUI" target="_blank" rel="noreferrer">Ver projeto ↗</a>
+</div>
+</article>
+
+<div id="githubProjects" class="github-projects"></div>
+</section>
+
+<section class="stats">
+<div><strong id="repoCount">--</strong><span>Repositórios</span></div>
+<div><strong id="starCount">--</strong><span>Estrelas</span></div>
+<div><strong id="followerCount">--</strong><span>Seguidores</span></div>
+</section>
+
+<section id="contato" class="contact">
+<p class="label">CONTATO</p>
+<h2>Tem alguma ideia?<br><span>Vamos conversar.</span></h2>
+<p>Se você tem um projeto, uma ideia ou quer conversar sobre tecnologia, pode me chamar.</p>
+<div class="actions">
+<a class="primary" href="mailto:matheus2019souz@gmail.com">E-mail</a>
+<a href="https://github.com/devmatheus32" target="_blank" rel="noreferrer">GitHub ↗</a>
+</div>
+</section>
+</main>
+
+<footer>
+<span>© 2026 Matheus Nascimento</span>
+<span>HTML · CSS · JavaScript</span>
+<a href="#inicio">↑ Topo</a>
+</footer>
+</body>
+</html>
